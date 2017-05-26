@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Phots</string>
+    <string name="title_activity_main_tab">MainTabActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="loading_data_error">loading data error</string>
+
+    <string name="nav_girl">美女</string>
+    <string name="nav_military">军事</string>
+    <string name="nav_comic">动漫</string>
+    <string name="nav_pet">宠物</string>
+
+</resources>
