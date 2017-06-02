@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="fuckermonkey.phots.ui.activity.SetThemeActivity"
+    android:background="@color/icons">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/back_view"
+                android:layout_width="@dimen/five_unit_view_size"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_back"
+                android:layout_centerVertical="true"
+                android:background="?attr/selectableItemBackgroundBorderless"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/theme_setting"
+                android:textColor="@color/icons"
+                android:textSize="@dimen/text_dimen_34pt"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/back_view"/>
+
+        </RelativeLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/theme_item_contain_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:orientation="horizontal">
+
+        <fuckermonkey.phots.view.PressableImageView
+            android:id="@+id/pink_view"
+            android:layout_width="@dimen/five_unit_view_size"
+            android:layout_height="@dimen/five_unit_view_size"
+            android:layout_marginLeft="@dimen/one_unit_view_size"
+            android:background="@color/pink_primary"/>
+
+        <fuckermonkey.phots.view.PressableImageView
+            android:id="@+id/purple_view"
+            android:layout_width="@dimen/five_unit_view_size"
+            android:layout_height="@dimen/five_unit_view_size"
+            android:layout_marginLeft="@dimen/one_unit_view_size"
+            android:layout_toRightOf="@+id/pink_view"
+            android:background="@color/purple_primary"/>
+
+        <fuckermonkey.phots.view.PressableImageView
+            android:id="@+id/blue_view"
+            android:layout_width="@dimen/five_unit_view_size"
+            android:layout_height="@dimen/five_unit_view_size"
+            android:layout_marginLeft="@dimen/one_unit_view_size"
+            android:layout_toRightOf="@+id/purple_view"
+            android:background="@color/blue_primary"/>
+
+        <fuckermonkey.phots.view.PressableImageView
+            android:id="@+id/yellow_view"
+            android:layout_width="@dimen/five_unit_view_size"
+            android:layout_height="@dimen/five_unit_view_size"
+            android:layout_marginLeft="@dimen/one_unit_view_size"
+            android:layout_toRightOf="@+id/blue_view"
+            android:background="@color/yellow_primary"/>
+
+        <fuckermonkey.phots.view.PressableImageView
+            android:id="@+id/green_view"
+            android:layout_width="@dimen/five_unit_view_size"
+            android:layout_height="@dimen/five_unit_view_size"
+            android:layout_marginLeft="@dimen/one_unit_view_size"
+            android:layout_toRightOf="@+id/yellow_view"
+            android:background="@color/green_primary"/>
+
+        <fuckermonkey.phots.view.PressableImageView
+            android:id="@+id/orange_view"
+            android:layout_width="@dimen/five_unit_view_size"
+            android:layout_height="@dimen/five_unit_view_size"
+            android:layout_marginLeft="@dimen/one_unit_view_size"
+            android:layout_toRightOf="@+id/green_view"
+            android:background="@color/orange_primary"/>
+
+        <fuckermonkey.phots.view.PressableImageView
+            android:id="@+id/red_view"
+            android:layout_width="@dimen/five_unit_view_size"
+            android:layout_height="@dimen/five_unit_view_size"
+            android:layout_marginTop="@dimen/one_unit_view_size"
+            android:layout_marginLeft="@dimen/one_unit_view_size"
+            android:layout_below="@+id/pink_view"
+            android:background="@color/red_primary"/>
+
+        <fuckermonkey.phots.view.PressableImageView
+            android:id="@+id/grey_view"
+            android:layout_width="@dimen/five_unit_view_size"
+            android:layout_height="@dimen/five_unit_view_size"
+            android:layout_marginTop="@dimen/one_unit_view_size"
+            android:layout_marginLeft="@dimen/one_unit_view_size"
+            android:layout_below="@+id/pink_view"
+            android:layout_toRightOf="@+id/red_view"
+            android:background="@color/grey_primary"/>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

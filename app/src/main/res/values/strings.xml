@@ -16,5 +16,7 @@
     <string name="nav_military">军事</string>
     <string name="nav_comic">动漫</string>
     <string name="nav_pet">宠物</string>
+    <string name="theme_setting">主题设置</string>
+
 
 </resources>

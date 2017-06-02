@@ -7,5 +7,5 @@ import retrofit2.http.Query
  */
 interface IImageListModel {
 
-    abstract fun getImageByTagAndFlag(tag: String, flags: String, pn: Int, rn: Int)
+    abstract fun getImageByTagAndFlag(tag: String, flags: String, pn: Int, rn: Int, isEvictReportCache: Boolean)
 }

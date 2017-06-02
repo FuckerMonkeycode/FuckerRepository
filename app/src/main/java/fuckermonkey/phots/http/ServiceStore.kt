@@ -12,9 +12,11 @@ import rx.Observable
 interface ServiceStore {
 
     /**
-     * 获取Token
-     * @param access_key 服务器秘钥access_key
-     * @param secret_key 服务器秘钥secret_key
+     * 获取图片列表
+     * @param tag1 大分类
+     * @param tag2 小分类
+     * @param pn 页数
+     * @param rn 每页返回内容数
      */
     @GET(Constants.BASE_URL)
     abstract fun getImageByTagAndFlag(@Query("tag1") tag: String, @Query("tag2") flags: String, @Query("pn") pn: Int, @Query("rn") rn: Int): Observable<ImageListResult>

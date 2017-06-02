@@ -44,7 +44,7 @@ class TypeFragment(tag: String, flag: String) : BaseFragment(), IImageListView, 
         setupListView()
 
         mImageListPresenter = ImageListPresenter(this)
-        (mImageListPresenter as ImageListPresenter).getImageListToServer(mTag!!, mFlag!!, mPage, 20)
+        (mImageListPresenter as ImageListPresenter).getImageListToServer(mTag!!, mFlag!!, mPage, 20, false)
 
     }
 
@@ -87,18 +87,18 @@ class TypeFragment(tag: String, flag: String) : BaseFragment(), IImageListView, 
     }
 
     override fun getImageListFailed() {
-        Toast.makeText(getContext(), R.string.loading_data_error, Toast.LENGTH_SHORT)
+        Toast.makeText(getContext(), R.string.loading_data_error, Toast.LENGTH_SHORT).show()
     }
 
     override fun onLoadMore() {
         mIsRefresh = false
         mPage += 20 //由于有重复所以跳过20页
-        (mImageListPresenter as ImageListPresenter).getImageListToServer(mTag!!, mFlag!!, mPage, 20)
+        (mImageListPresenter as ImageListPresenter).getImageListToServer(mTag!!, mFlag!!, mPage, 20, false)
     }
 
     override fun onRefresh() {
         mIsRefresh = true
-        (mImageListPresenter as ImageListPresenter).getImageListToServer(mTag!!, mFlag!!, 0, 20)
+        (mImageListPresenter as ImageListPresenter).getImageListToServer(mTag!!, mFlag!!, 0, 20, true)
     }
 
     fun setupListView() {
@@ -124,7 +124,7 @@ class TypeFragment(tag: String, flag: String) : BaseFragment(), IImageListView, 
         mFlag = flag
         mIsRefresh = false
         mPage = 0
-        (mImageListPresenter as ImageListPresenter).getImageListToServer(mTag!!, mFlag!!, mPage, 20)
+        (mImageListPresenter as ImageListPresenter).getImageListToServer(mTag!!, mFlag!!, mPage, 20, false)
     }
 
 }

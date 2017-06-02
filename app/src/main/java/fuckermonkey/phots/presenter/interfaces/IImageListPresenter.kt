@@ -7,7 +7,7 @@ import fuckermonkey.phots.model.ImageListResult
  */
 interface IImageListPresenter {
 
-    abstract fun getImageListToServer(tag: String, flags: String, pn: Int, rn: Int)
+    abstract fun getImageListToServer(tag: String, flags: String, pn: Int, rn: Int, isEvictReportCache: Boolean)
     abstract fun getImageListSucceed(imageListResult: ImageListResult)
     abstract fun getImageListFailed()
 }

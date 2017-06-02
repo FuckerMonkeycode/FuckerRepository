@@ -1,17 +1,23 @@
 package fuckermonkey.phots.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.support.v7.widget.RecyclerView
+import android.support.v7.widget.StaggeredGridLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import fuckermonkey.phots.R
 import fuckermonkey.phots.model.ImageListResult
+import fuckermonkey.phots.ui.activity.BrowsImageActivity
+import fuckermonkey.phots.ui.activity.BrowsImagePageActivity
+import fuckermonkey.phots.util.Constants
 import fuckermonkey.phots.util.ConvertUtils
 import fuckermonkey.phots.util.Utils
-import java.util.ArrayList
+import kotlin.collections.ArrayList
 
 /**
  * Created by xuxiaowu on 2017/5/24.
@@ -40,11 +46,21 @@ class ImageListAdapter(context: Context) : BaseListAdapter<ImageListResult.Data>
             val height = 140 + (Math.random() * 50).toInt()
             mHeightList.add(ConvertUtils.dp2px(context, height.toFloat()))
         }
-        val layoutParams = viewHolder.coverView!!.layoutParams as RelativeLayout.LayoutParams
+        val layoutParams = viewHolder.coverView!!.layoutParams as StaggeredGridLayoutManager.LayoutParams
         if (position >= mHeightList.size) return
         layoutParams.height = mHeightList.get(position)
         viewHolder.coverView!!.layoutParams = layoutParams
+        viewHolder.coverView!!.setOnClickListener { doCoverViewClick(position) }
 
+    }
+
+    fun doCoverViewClick(position: Int) {
+        val intent = Intent()
+        val data = dataList as ArrayList<ImageListResult.Data>
+        intent.setClass(context, BrowsImagePageActivity::class.java)
+        intent.putExtra(Constants.EXTRA_DATA, data)
+        intent.putExtra(Constants.EXTRA_POSITION, position)
+        context!!.startActivity(intent)
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

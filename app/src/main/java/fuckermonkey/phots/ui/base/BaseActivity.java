@@ -1,14 +1,20 @@
 package fuckermonkey.phots.ui.base;
 
 import android.content.pm.ActivityInfo;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 
+import fuckermonkey.phots.R;
 import fuckermonkey.phots.util.ActivityCollector;
+import fuckermonkey.phots.util.Constants;
+import fuckermonkey.phots.util.SpUtils;
 
 /**
  * BaseViewActivity基础Activity
@@ -28,6 +34,8 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         context = this;
         ActivityCollector.add(this);
+
+        setAppTheme();
 
         if (getLayoutId() != -1) {
             if (getLayoutId() == 0) {
@@ -96,5 +104,37 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
 
     public void setControlBackView(boolean b) {
         self_control_back = b;
+    }
+
+    private void setAppTheme() {
+        int themeId = SpUtils.get(Constants.SP_THEME, 0);
+        int theme = R.style.PinkAppTheme;
+        switch (themeId) {
+            case Constants.THEME_PINK:
+                theme = R.style.PinkAppTheme;
+                break;
+            case Constants.THEME_PURPLE:
+                theme = R.style.PurpleAppTheme;
+                break;
+            case Constants.THEME_BLUE:
+                theme = R.style.BlueAppTheme;
+                break;
+            case Constants.THEME_YELLOW:
+                theme = R.style.YellowAppTheme;
+                break;
+            case Constants.THEME_GREEN:
+                theme = R.style.GreenAppTheme;
+                break;
+            case Constants.THEME_ORANGE:
+                theme = R.style.OrangeAppTheme;
+                break;
+            case Constants.THEME_RED:
+                theme = R.style.RedAppTheme;
+                break;
+            case Constants.THEME_GREY:
+                theme = R.style.GreyAppTheme;
+                break;
+        }
+        setTheme(theme);
     }
 }

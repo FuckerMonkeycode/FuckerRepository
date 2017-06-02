@@ -1,5 +1,6 @@
 package fuckermonkey.phots.ui.activity
 
+import android.content.Intent
 import android.view.View
 import android.support.design.widget.NavigationView
 import android.support.design.widget.TabLayout
@@ -123,8 +124,10 @@ class MainTabActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedL
             updateViewPager(mComicTypeList!!, INDEX_COMIC)
         } else if (id == R.id.nav_pet) {
             updateViewPager(mPeyTypeList!!, INDEX_PET)
-        } else if (id == R.id.nav_share) {
-
+        } else if (id == R.id.nav_theme_setting) {
+            val intent = Intent()
+            intent.setClass(this, SetThemeActivity::class.java)
+            startActivity(intent)
         } else if (id == R.id.nav_send) {
 
         }
@@ -217,7 +220,7 @@ class MainTabActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedL
         mPeyTypeList!!.add("喵星人")
         mPeyTypeList!!.add("猫叔")
         mPeyTypeList!!.add("哈士奇")
-        mPeyTypeList!!.add("宠物室")
+        mPeyTypeList!!.add("宠物鼠")
         mPeyTypeList!!.add("金毛")
         mPeyTypeList!!.add("摩萨耶")
         mPeyTypeList!!.add("博美")

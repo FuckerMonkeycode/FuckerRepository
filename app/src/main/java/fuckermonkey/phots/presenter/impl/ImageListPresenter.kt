@@ -19,8 +19,8 @@ class ImageListPresenter(imageView: IImageListView) : IImageListPresenter {
         iImageListView = imageView
     }
 
-    override fun getImageListToServer(tag: String, flags: String, pn: Int, rn: Int) {
-        iImageListModel?.getImageByTagAndFlag(tag, flags, pn, rn)
+    override fun getImageListToServer(tag: String, flags: String, pn: Int, rn: Int, isEvictReportCache: Boolean) {
+        iImageListModel?.getImageByTagAndFlag(tag, flags, pn, rn, isEvictReportCache)
     }
 
     override fun getImageListSucceed(imageListResult: ImageListResult) {

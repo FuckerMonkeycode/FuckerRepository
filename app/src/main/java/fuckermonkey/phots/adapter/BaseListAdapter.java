@@ -21,6 +21,7 @@ public class BaseListAdapter<T extends Object> extends RecyclerView.Adapter {
     }
 
     protected ArrayList<T> mDataList = new ArrayList<>();
+    protected ArrayList<T> mIamgeList = new ArrayList<>();
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
