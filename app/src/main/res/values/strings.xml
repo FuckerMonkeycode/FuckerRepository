@@ -16,7 +16,15 @@
     <string name="nav_military">军事</string>
     <string name="nav_comic">动漫</string>
     <string name="nav_pet">宠物</string>
+    <string name="nav_photograph">摄影</string>
     <string name="theme_setting">主题设置</string>
+    <string name="browse_setting">浏览设置</string>
+
+    <string name="one_column">一列</string>
+    <string name="two_column">二列</string>
+    <string name="three_column">三列</string>
+    <string name="four_column">四列</string>
+    <string name="five_column">五列</string>
 
 
 </resources>

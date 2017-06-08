@@ -14,6 +14,8 @@ import fuckermonkey.phots.model.ImageListResult
 import fuckermonkey.phots.presenter.impl.ImageListPresenter
 import fuckermonkey.phots.ui.base.BaseFragment
 import fuckermonkey.phots.ui.interfaces.IImageListView
+import fuckermonkey.phots.util.Constants
+import fuckermonkey.phots.util.SpUtils
 
 /**
  * Created by xuxiaowu on 2017/5/24.
@@ -40,7 +42,8 @@ class TypeFragment(tag: String, flag: String) : BaseFragment(), IImageListView, 
 
     override fun initFragment() {
         mImageListAdapter = ImageListAdapter(getContext())
-        mStaggeredGridLayoutManager = StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL)
+        val column = SpUtils.get(Constants.SP_COLUMN, 3)
+        mStaggeredGridLayoutManager = StaggeredGridLayoutManager(column, StaggeredGridLayoutManager.VERTICAL)
         setupListView()
 
         mImageListPresenter = ImageListPresenter(this)

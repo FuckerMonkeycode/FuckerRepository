@@ -1,12 +1,9 @@
 package fuckermonkey.phots.ui.base;
 
 import android.content.pm.ActivityInfo;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -43,6 +40,9 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
             }
             setContentView(getLayoutId());
         }
+
+        backView = (ImageView) findViewById(R.id.act_back_view);
+        if (backView != null) backView.setOnClickListener(this);
 
         initView();
         setViewListener();
@@ -89,9 +89,9 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
 
     @Override
     public void onClick(View v) {
-//        if (!self_control_back && v.getId() == R.id.imgView_act_back) {
-//            context.finish();
-//        }
+        if (!self_control_back && v.getId() == R.id.act_back_view) {
+            context.finish();
+        }
         OnClick(v);
     }
 

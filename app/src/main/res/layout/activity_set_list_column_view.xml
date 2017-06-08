@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="fuckermonkey.phots.ui.activity.SetListColumnActivity"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/act_back_view"
+                android:layout_width="@dimen/five_unit_view_size"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_back"
+                android:layout_centerVertical="true"
+                android:background="?attr/selectableItemBackgroundBorderless"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/browse_setting"
+                android:textColor="@color/icons"
+                android:textSize="@dimen/text_dimen_34pt"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/act_back_view"/>
+
+        </RelativeLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/two_unit_view_size"
+        android:layout_marginLeft="@dimen/one_unit_view_size"
+        android:textColor="?attr/colorPrimary"
+        android:text="图片列数"/>
+
+    <RadioGroup
+        android:id="@+id/column_rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/one_unit_view_size">
+
+        <RadioButton
+            android:id="@+id/one_column"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/one_column"/>
+
+        <RadioButton
+            android:id="@+id/two_column"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/two_column"/>
+
+        <RadioButton
+            android:id="@+id/three_column"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/three_column"/>
+
+        <RadioButton
+            android:id="@+id/four_column"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/four_column"/>
+
+
+    </RadioGroup>
+
+</LinearLayout>

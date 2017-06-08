@@ -24,6 +24,7 @@ class MainTabActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedL
     val INDEX_MILITARY = 1
     val INDEX_COMIC = 2
     val INDEX_PET = 3
+    val INDEX_PHOTOGRAPH = 4
 
     var mTabLayout: TabLayout? = null
     var mViewPager: ViewPager? = null
@@ -33,7 +34,8 @@ class MainTabActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedL
     var mMilitaryTypeList: ArrayList<String>? = null //军事
     var mComicTypeList: ArrayList<String>? = null //动漫
     var mPeyTypeList: ArrayList<String>? = null //宠物
-    var mTagList: ArrayList<String>? = null
+    var mPhotographTypeList: ArrayList<String>? = null //宠物
+    var mTagList: ArrayList<String>? = null //摄影
 
 
     var mFragmentListMap: HashMap<String, ArrayList<Fragment>>? = null
@@ -61,6 +63,7 @@ class MainTabActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedL
         mMilitaryTypeList = ArrayList()
         mComicTypeList = ArrayList()
         mPeyTypeList = ArrayList()
+        mPhotographTypeList = ArrayList()
 
         mFragmentListMap = HashMap()
         mTypeFragmentDataListMap = HashMap()
@@ -124,12 +127,16 @@ class MainTabActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedL
             updateViewPager(mComicTypeList!!, INDEX_COMIC)
         } else if (id == R.id.nav_pet) {
             updateViewPager(mPeyTypeList!!, INDEX_PET)
+        } else if (id == R.id.nav_photograph) {
+            updateViewPager(mPhotographTypeList!!, INDEX_PHOTOGRAPH)
         } else if (id == R.id.nav_theme_setting) {
             val intent = Intent()
             intent.setClass(this, SetThemeActivity::class.java)
             startActivity(intent)
-        } else if (id == R.id.nav_send) {
-
+        } else if (id == R.id.nav_browse_setting) {
+            val intent = Intent()
+            intent.setClass(this, SetListColumnActivity::class.java)
+            startActivity(intent)
         }
 
         val drawer = findViewById(R.id.drawer_layout) as DrawerLayout
@@ -181,6 +188,7 @@ class MainTabActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedL
         mTagList!!.add("军事")
         mTagList!!.add("动漫")
         mTagList!!.add("宠物")
+        mTagList!!.add("摄影")
 
         mGirlTypeList!!.add("小清新")
         mGirlTypeList!!.add("网络美女")
@@ -228,5 +236,18 @@ class MainTabActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedL
         mPeyTypeList!!.add("博美")
         mPeyTypeList!!.add("萌货")
 
+        mPhotographTypeList!!.add("风景")
+        mPhotographTypeList!!.add("静物")
+        mPhotographTypeList!!.add("人像")
+        mPhotographTypeList!!.add("国外摄影")
+        mPhotographTypeList!!.add("lomo")
+        mPhotographTypeList!!.add("光影")
+        mPhotographTypeList!!.add("国家地理")
+        mPhotographTypeList!!.add("创意摄影")
+        mPhotographTypeList!!.add("人文纪实")
+        mPhotographTypeList!!.add("水下摄影")
+        mPhotographTypeList!!.add("时尚")
+        mPhotographTypeList!!.add("儿童摄影")
+        mPhotographTypeList!!.add("生态摄影")
     }
 }

@@ -18,7 +18,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/back_view"
+                android:id="@+id/act_back_view"
                 android:layout_width="@dimen/five_unit_view_size"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_arrow_back"
@@ -32,7 +32,7 @@
                 android:textColor="@color/icons"
                 android:textSize="@dimen/text_dimen_34pt"
                 android:layout_centerVertical="true"
-                android:layout_toRightOf="@+id/back_view"/>
+                android:layout_toRightOf="@+id/act_back_view"/>
 
         </RelativeLayout>
 

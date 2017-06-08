@@ -7,15 +7,13 @@ import android.support.v7.widget.StaggeredGridLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.FrameLayout
 import android.widget.ImageView
-import android.widget.RelativeLayout
 import fuckermonkey.phots.R
 import fuckermonkey.phots.model.ImageListResult
-import fuckermonkey.phots.ui.activity.BrowsImageActivity
 import fuckermonkey.phots.ui.activity.BrowsImagePageActivity
 import fuckermonkey.phots.util.Constants
 import fuckermonkey.phots.util.ConvertUtils
+import fuckermonkey.phots.util.SpUtils
 import fuckermonkey.phots.util.Utils
 import kotlin.collections.ArrayList
 
@@ -27,10 +25,12 @@ class ImageListAdapter(context: Context) : BaseListAdapter<ImageListResult.Data>
     var context: Context? = null
     var mLayoutInflater: LayoutInflater? = null
     val mHeightList: ArrayList<Int> = ArrayList()
+    var mColumnNum: Int? = null
 
     init {
         mLayoutInflater = LayoutInflater.from(context)
         this.context = context
+        mColumnNum = SpUtils.get(Constants.SP_COLUMN, 3)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): RecyclerView.ViewHolder {
@@ -43,7 +43,7 @@ class ImageListAdapter(context: Context) : BaseListAdapter<ImageListResult.Data>
         Utils.loadImage(viewHolder.coverView!!, data.image_url, R.drawable.ic_loading_rotate)
 
         if (mHeightList.size <= position) {
-            val height = 140 + (Math.random() * 50).toInt()
+            val height = getDefaultHeight() + (Math.random() * 50).toInt()
             mHeightList.add(ConvertUtils.dp2px(context, height.toFloat()))
         }
         val layoutParams = viewHolder.coverView!!.layoutParams as StaggeredGridLayoutManager.LayoutParams
@@ -61,6 +61,24 @@ class ImageListAdapter(context: Context) : BaseListAdapter<ImageListResult.Data>
         intent.putExtra(Constants.EXTRA_DATA, data)
         intent.putExtra(Constants.EXTRA_POSITION, position)
         context!!.startActivity(intent)
+    }
+
+    fun getDefaultHeight(): Int {
+        when (mColumnNum) {
+            1 -> {
+                return 300
+            }
+            2 -> {
+                return 230
+            }
+            3 -> {
+                return 140
+            }
+            4 -> {
+                return 100
+            }
+        }
+        return 140
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

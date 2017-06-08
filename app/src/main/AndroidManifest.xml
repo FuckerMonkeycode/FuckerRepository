@@ -25,6 +25,8 @@
         </activity>
         <activity android:name=".ui.activity.SetThemeActivity">
         </activity>
+        <activity android:name=".ui.activity.SetListColumnActivity">
+        </activity>
     </application>
 
 </manifest>

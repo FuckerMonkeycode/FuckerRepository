@@ -18,6 +18,10 @@
             android:id="@+id/nav_pet"
             android:icon="@drawable/ic_photo_black"
             android:title="@string/nav_pet"/>
+        <item
+            android:id="@+id/nav_photograph"
+            android:icon="@drawable/ic_photo_black"
+            android:title="@string/nav_photograph"/>
     </group>
 
     <item android:title="Other">
@@ -27,9 +31,9 @@
                 android:icon="@drawable/ic_menu_manage"
                 android:title="@string/theme_setting"/>
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send"/>
+                android:id="@+id/nav_browse_setting"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="@string/browse_setting"/>
         </menu>
     </item>
 

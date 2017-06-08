@@ -1,10 +1,8 @@
 package fuckermonkey.phots.ui.activity
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
-import android.os.Bundle
-import android.support.v7.widget.Toolbar
 import android.view.KeyEvent
+import android.view.MotionEvent
 import android.view.View
 import android.widget.RelativeLayout
 
@@ -26,6 +24,7 @@ class SetThemeActivity : BaseActivity() {
     }
 
     override fun initActivity() {
+        setControlBackView(true)
         val index = SpUtils.get(Constants.SP_THEME, 0)
         mSelectedView = mThemeItemContainView!!.getChildAt(index) as PressableImageView
         mSelectedView!!.setImageResource(R.drawable.confirm)
@@ -45,7 +44,7 @@ class SetThemeActivity : BaseActivity() {
         findViewById(R.id.orange_view).setOnClickListener(this)
         findViewById(R.id.red_view).setOnClickListener(this)
         findViewById(R.id.grey_view).setOnClickListener(this)
-        findViewById(R.id.back_view).setOnClickListener(this)
+        findViewById(R.id.act_back_view).setOnClickListener(this)
     }
 
     override fun OnClick(v: View?) {
@@ -76,7 +75,7 @@ class SetThemeActivity : BaseActivity() {
             R.id.grey_view -> {
                 themeIndex = Constants.THEME_GREY
             }
-            R.id.back_view -> {
+            R.id.act_back_view -> {
                 if (mOldThemeIndex == SpUtils.get(Constants.SP_THEME, 0)) {
                     finish()
                     return
@@ -114,5 +113,10 @@ class SetThemeActivity : BaseActivity() {
         startActivity(intent)
     }
 
+    val ss = View.OnTouchListener{
+        view: View, motionEvent: MotionEvent ->
+        print(motionEvent.action)
+        true
+    }
 
 }
