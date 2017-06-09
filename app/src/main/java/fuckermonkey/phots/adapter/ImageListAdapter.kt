@@ -1,5 +1,7 @@
 package fuckermonkey.phots.adapter
 
+import android.app.Activity
+import android.app.ActivityOptions
 import android.content.Context
 import android.content.Intent
 import android.support.v7.widget.RecyclerView
@@ -20,9 +22,9 @@ import kotlin.collections.ArrayList
 /**
  * Created by xuxiaowu on 2017/5/24.
  */
-class ImageListAdapter(context: Context) : BaseListAdapter<ImageListResult.Data>() {
+class ImageListAdapter(context: Activity) : BaseListAdapter<ImageListResult.Data>() {
 
-    var context: Context? = null
+    var context: Activity? = null
     var mLayoutInflater: LayoutInflater? = null
     val mHeightList: ArrayList<Int> = ArrayList()
     var mColumnNum: Int? = null
@@ -50,17 +52,17 @@ class ImageListAdapter(context: Context) : BaseListAdapter<ImageListResult.Data>
         if (position >= mHeightList.size) return
         layoutParams.height = mHeightList.get(position)
         viewHolder.coverView!!.layoutParams = layoutParams
-        viewHolder.coverView!!.setOnClickListener { doCoverViewClick(position) }
+        viewHolder.coverView!!.setOnClickListener { doCoverViewClick(position, viewHolder.coverView!!) }
 
     }
 
-    fun doCoverViewClick(position: Int) {
+    fun doCoverViewClick(position: Int, view: ImageView) {
         val intent = Intent()
         val data = dataList as ArrayList<ImageListResult.Data>
         intent.setClass(context, BrowsImagePageActivity::class.java)
         intent.putExtra(Constants.EXTRA_DATA, data)
         intent.putExtra(Constants.EXTRA_POSITION, position)
-        context!!.startActivity(intent)
+        context!!.startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(context, view, Constants.SHARE_ELEMENT_NAME).toBundle())
     }
 
     fun getDefaultHeight(): Int {

@@ -41,7 +41,7 @@ class TypeFragment(tag: String, flag: String) : BaseFragment(), IImageListView, 
     }
 
     override fun initFragment() {
-        mImageListAdapter = ImageListAdapter(getContext())
+        mImageListAdapter = ImageListAdapter(activity)
         val column = SpUtils.get(Constants.SP_COLUMN, 3)
         mStaggeredGridLayoutManager = StaggeredGridLayoutManager(column, StaggeredGridLayoutManager.VERTICAL)
         setupListView()

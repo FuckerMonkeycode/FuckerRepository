@@ -16,6 +16,8 @@ public class Constants {
     public final static String SP_THEME = "theme";
     public final static String SP_COLUMN = "column";
 
+    public final static String SHARE_ELEMENT_NAME = "image";
+
     public final static int THEME_PINK = 0;
     public final static int THEME_PURPLE = 1;
     public final static int THEME_BLUE = 2;

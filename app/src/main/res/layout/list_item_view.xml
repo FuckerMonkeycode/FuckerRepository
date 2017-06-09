@@ -8,4 +8,5 @@
     android:layout_alignParentTop="true"
     android:scaleType="centerCrop"
     android:src="?attr/colorPrimaryLight"
-    android:background="?attr/colorPrimaryLight"/>
+    android:background="?attr/colorPrimaryLight"
+    android:transitionName="image"/>
